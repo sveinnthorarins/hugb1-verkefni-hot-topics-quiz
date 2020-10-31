@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hot Topics Quiz - Signup</title>
+  <style>
+    input[name='username'] {
+      text-transform: lowercase;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -15,9 +20,9 @@
     </div>
     <div>&nbsp;</div><!-- this is only to allow some space for error to appear neatly, should be removed after configuring css -->
     <form method="POST">
-      <input type="text" th:name="username" placeholder="Username" required="true">
-      <input type="text" th:name="name" placeholder="Name" required="true">
-      <input type="password" th:name="password" placeholder="Password" required="true">
+      <input type="text" name="username" placeholder="Username" required="true">
+      <input type="text" name="name" placeholder="Name" required="true">
+      <input type="password" name="password" placeholder="Password" required="true">
       <input type="submit" value="Sign up">
     </form>
     <br/>

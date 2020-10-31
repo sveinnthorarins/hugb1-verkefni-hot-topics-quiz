@@ -31,6 +31,7 @@ public class UserServiceImp implements UserService {
    */
   @Override
   public User validateLogin(String username, String password) {
+    username = username.toLowerCase();
     User user = repository.findByUsername(username);
     if (user == null) return null;
     UserPassword userPw = pwRepo.findByUserParent(user).orElseThrow(
@@ -56,6 +57,7 @@ public class UserServiceImp implements UserService {
    */
   @Override
   public User saveNewUser(String username, String name, String password) {
+    username = username.toLowerCase();
     //Check if username already exists in database, if it does: return null
     User user = repository.findByUsername(username);
     if (user != null) return null;
