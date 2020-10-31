@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hot Topics Quiz - Login</title>
+</head>
+<body>
+  <header>
+    <h2>Hot Topics Quiz</h2>
+  </header>
+  <main>
+    <div>
+      <h4>Please log in to continue.</h4>
+    </div>
+    <div style="color: red" th:text="${error}">&nbsp;</div>
+    <form method="POST">
+      <input type="text" th:name="username" placeholder="Username" required="true">
+      <input type="password" th:name="password" placeholder="Password" required="true">
+      <input type="submit" value="Log in">
+    </form>
+    <br/>
+    <div>
+      <a href="../signup"><button>Sign up instead.</button></a>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+</html>
