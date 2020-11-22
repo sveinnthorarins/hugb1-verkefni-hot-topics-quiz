@@ -18,11 +18,11 @@
     <div>
       <h4>Please provide the required information to sign up.</h4>
     </div>
-    <div>&nbsp;</div><!-- this is only to allow some space for error to appear neatly, should be removed after configuring css -->
+    <div style="color: red" th:text="${error} ?: '&nbsp;'"></div>
     <form method="POST">
-      <input type="text" name="username" placeholder="Username" required="true">
-      <input type="text" name="name" placeholder="Name" required="true">
-      <input type="password" name="password" placeholder="Password" required="true">
+      <input type="text" name="username" placeholder="Username" required="true" th:value="${username} ?: ''">
+      <input type="text" name="name" placeholder="Name" required="true" th:value="${name} ?: ''">
+      <input type="password" name="password" placeholder="Password" required="true" th:value="${password} ?: ''">
       <input type="submit" value="Sign up">
     </form>
     <br/>

@@ -38,7 +38,7 @@ public class UserController {
     User user = userService.validateLogin(username, password);
     if(user == null) {
       model.addAttribute("error", "Incorrect username or password.");
-      return "login-error";
+      return "login";
     }
     model.addAttribute("User", user);
     return "redirect:/menu";
@@ -57,7 +57,7 @@ public class UserController {
       model.addAttribute("name", name);
       model.addAttribute("password", password);
       model.addAttribute("error", "Username already taken.");
-      return "signup-error";
+      return "signup";
     }
     model.addAttribute("User", user);
     return "redirect:/menu";
