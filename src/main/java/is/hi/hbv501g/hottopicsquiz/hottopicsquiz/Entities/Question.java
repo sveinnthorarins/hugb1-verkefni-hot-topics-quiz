@@ -13,9 +13,6 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 @Entity
 public class Question {
   
@@ -25,26 +22,43 @@ public class Question {
 
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
   @JoinColumn(name = "quiz_id", nullable = false)
-  @OnDelete(action = OnDeleteAction.CASCADE)
   @JsonIgnore
   private Quiz quizParent;
   
   private String text;
 
   @ElementCollection(targetClass = String.class)
-  private List<String> answer;
+  private List<String> answers;
+
+  @ElementCollection(targetClass = Boolean.class)
+  private List<Boolean> correctAnswers;
 
   private String infoUrl;
 
-  public Question(Quiz quizParent, String text, List<String> answer, String infoUrl) {
+  public Question() {}
+
+  public Question(Quiz quizParent, String text, List<String> answers, List<Boolean> correctAnswers, String infoUrl) {
     this.quizParent = quizParent;
     this.text = text;
-    this.answer = answer;
+    this.answers = answers;
+    this.correctAnswers = correctAnswers;
     this.infoUrl = infoUrl;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
   public Quiz getQuizParent() {
     return quizParent;
+  }
+
+  public void setQuizParent(Quiz quizParent) {
+    this.quizParent = quizParent;
   }
   
   public String getText() {
@@ -55,12 +69,20 @@ public class Question {
     this.text = text;
   }
 
-  public List<String> getAnswer() {
-    return answer;
+  public List<String> getAnswers() {
+    return answers;
   }
 
-  public void setAnswer(List<String> answer) {
-    this.answer = answer;
+  public void setAnswers(List<String> answers) {
+    this.answers = answers;
+  }
+
+  public List<Boolean> getCorrectAnswers() {
+    return correctAnswers;
+  }
+
+  public void setCorrectAnswers(List<Boolean> correctAnswers) {
+    this.correctAnswers = correctAnswers;
   }
 
   public String getInfoUrl() {

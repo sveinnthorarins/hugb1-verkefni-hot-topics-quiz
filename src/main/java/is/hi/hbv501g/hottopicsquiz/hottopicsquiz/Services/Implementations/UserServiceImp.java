@@ -25,6 +25,14 @@ public class UserServiceImp implements UserService {
     this.pwRepo = pwRepo;
   }
 
+  @Override
+  public User findById(Long id) {
+    User user = repository.findById(id).orElseThrow(
+      () -> new Error("User id not found in database.")
+    );
+    return user;
+  }
+
   /**
    * Validates login information.
    * @return the User entity if info is valid, {@code null} if username or password is invalid.

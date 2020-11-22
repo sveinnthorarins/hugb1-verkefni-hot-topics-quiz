@@ -11,7 +11,31 @@
     <h2>Hot Topics Quiz</h2>
   </header>
   <main>
-    <p>Welcome</p>
+    <section class="quizmenu">
+      <div class="quizmenu_current">
+        <p class="quizmenu_current_heading">This week's quiz</p>
+        <p class="quizmenu_current_error" th:if="${CurrentQuiz == null}">Oh no, an error! Current quiz can't be found.</p>
+        <div class="quizmenu_current_quiz" th:if="${CurrentQuiz != null}">
+          <p class="quizmenu_current_quiz_title" th:text="${CurrentQuiz.name}"></p>
+          <a class="quizmenu_current_quiz_playbutton" th:href="/play">Play</a>
+        </div>
+      </div>
+      <div class="quizmenu_completed">
+        <p class="quizmenu_completed_heading">Completed quizzes</p>
+        <div class="quizmenu_completed_error" th:if="${User.completed==null or User.completed.isEmpty()}">
+          No completed quizzes were found.
+        </div>
+        <div class="quizmenu_completed_quizlist" th:if="${User.completed!=null and !User.completed.isEmpty()}">
+          <div class="quizmenu_completed_quizlist_quiz" th:each="compquiz : ${User.completed}">
+            <p class="quizmenu_completed_quizlist_quiz_title" th:text="${compquiz.quiz.name}"></p>
+            <div class="quizmenu_completed_quizlist_quiz_score">
+              <span>Score: </span><span th:text="${compquiz.score}"></span><span>/5</span>
+            </div>
+            <button class="quizmenu_completed_quizlist_quiz_view" th:action="@{/viewcompletedquiz(id=${compquiz.id})}"></button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer></footer>
 </body>

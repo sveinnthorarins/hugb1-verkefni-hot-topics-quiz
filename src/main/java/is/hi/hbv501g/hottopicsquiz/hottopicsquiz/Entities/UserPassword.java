@@ -25,17 +25,35 @@ public class UserPassword {
 
   private String encryptedPassword;
 
+  public UserPassword() {}
+
   public UserPassword(User userParent, String encryptedPassword) {
     this.userParent = userParent;
     this.encryptedPassword = encryptedPassword;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
   public User getUserParent() {
     return userParent;
   }
 
+  public void setUserParent(User userParent) {
+    this.userParent = userParent;
+  }
+
   public String getEncryptedPassword() {
     return encryptedPassword;
+  }
+
+  public void setEncryptedPassword(String encryptedPassword) {
+    this.encryptedPassword = encryptedPassword;
   }
 
 }
