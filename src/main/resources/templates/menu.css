@@ -1,0 +1,14 @@
+/*applying font on document*/
+html *
+{
+   color: #000;
+   font-family: Arial;
+}
+
+h2{
+    font-weight: bold;
+    font-size: 30px;
+  }
+   h4{
+      font-weight: bold;
+  }
