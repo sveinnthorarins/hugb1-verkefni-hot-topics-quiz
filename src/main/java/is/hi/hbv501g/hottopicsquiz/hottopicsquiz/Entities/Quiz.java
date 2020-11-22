@@ -3,6 +3,7 @@ package is.hi.hbv501g.hottopicsquiz.hottopicsquiz.Entities;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ public class Quiz {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "quizParent")
+  @OneToMany(fetch = FetchType.LAZY, mappedBy = "quizParent", cascade = CascadeType.ALL)
   private List<Question> questions;
 
   private String name;
@@ -25,6 +26,8 @@ public class Quiz {
   private LocalDateTime startDate;
 
   private LocalDateTime endDate;
+
+  public Quiz() {}
 
   public Quiz(List<Question> questions, String name, LocalDateTime startDate, LocalDateTime endDate) {
     this.questions = questions;
@@ -35,6 +38,10 @@ public class Quiz {
 
   public Long getId() {
     return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
   public List<Question> getQuestions() {

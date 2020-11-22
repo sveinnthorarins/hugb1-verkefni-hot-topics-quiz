@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<script th:inline="javascript">
+  const questions = [
+  {
+    question: /*[[${CurrentQuiz.questions.get(0).text}]]*/ 'What is the capital of Norway?',
+    answers: [
+      { text: /*[[${CurrentQuiz.questions.get(0).answers.get(0)}]]*/ 'Malmö', correct: /*[[${CurrentQuiz.questions.get(0).correctAnswers.get(0)}]]*/ false },
+      { text: /*[[${CurrentQuiz.questions.get(0).answers.get(1)}]]*/ 'Reykjavík', correct: /*[[${CurrentQuiz.questions.get(0).correctAnswers.get(1)}]]*/ false },
+      { text: /*[[${CurrentQuiz.questions.get(0).answers.get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.questions.get(0).correctAnswers.get(2)}]]*/ false},
+      { text: /*[[${CurrentQuiz.questions.get(0).answers.get(3)}]]*/ 'Oslo', correct: /*[[${CurrentQuiz.questions.get(0).correctAnswers.get(3)}]]*/ true}
+    ]
+  },
+  {
+    question: /*[[${CurrentQuiz.questions.get(1).text}]]*/ 'What is the capital of Norway?',
+    answers: [
+      { text: /*[[${CurrentQuiz.questions.get(1).answers.get(0)}]]*/ 'Malmö',       correct: /*[[${CurrentQuiz.questions.get(1).correctAnswers.get(0)}]]*/ false },
+      { text: /*[[${CurrentQuiz.questions.get(1).answers.get(1)}]]*/ 'Reykjavík',   correct: /*[[${CurrentQuiz.questions.get(1).correctAnswers.get(1)}]]*/ false },
+      { text: /*[[${CurrentQuiz.questions.get(1).answers.get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.questions.get(1).correctAnswers.get(2)}]]*/ false},
+      { text: /*[[${CurrentQuiz.questions.get(1).answers.get(3)}]]*/ 'Oslo',        correct: /*[[${CurrentQuiz.questions.get(1).correctAnswers.get(3)}]]*/ true}
+    ]
+  },
+  {
+    question: /*[[${CurrentQuiz.questions.get(2).text}]]*/ 'What is the capital of Norway?',
+    answers: [
+      { text: /*[[${CurrentQuiz.questions.get(2).answers.get(0)}]]*/ 'Malmö',       correct: /*[[${CurrentQuiz.questions.get(2).correctAnswers.get(0)}]]*/ false },
+      { text: /*[[${CurrentQuiz.questions.get(2).answers.get(1)}]]*/ 'Reykjavík',   correct: /*[[${CurrentQuiz.questions.get(2).correctAnswers.get(1)}]]*/ false },
+      { text: /*[[${CurrentQuiz.questions.get(2).answers.get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.questions.get(2).correctAnswers.get(2)}]]*/ false},
+      { text: /*[[${CurrentQuiz.questions.get(2).answers.get(3)}]]*/ 'Oslo',        correct: /*[[${CurrentQuiz.questions.get(2).correctAnswers.get(3)}]]*/ true}
+    ]
+  },
+  {
+    question: /*[[${CurrentQuiz.questions.get(3).text}]]*/ 'What is the capital of Norway?',
+    answers: [
+      { text: /*[[${CurrentQuiz.questions.get(3).answers.get(0)}]]*/ 'Malmö',       correct: /*[[${CurrentQuiz.questions.get(3).correctAnswers.get(0)}]]*/ false },
+      { text: /*[[${CurrentQuiz.questions.get(3).answers.get(1)}]]*/ 'Reykjavík',   correct: /*[[${CurrentQuiz.questions.get(3).correctAnswers.get(1)}]]*/ false },
+      { text: /*[[${CurrentQuiz.questions.get(3).answers.get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.questions.get(3).correctAnswers.get(2)}]]*/ false},
+      { text: /*[[${CurrentQuiz.questions.get(3).answers.get(3)}]]*/ 'Oslo',        correct: /*[[${CurrentQuiz.questions.get(3).correctAnswers.get(3)}]]*/ true}
+    ]
+  }, 
+  {
+    question: /*[[${CurrentQuiz.questions.get(4).text}]]*/ 'What is the capital of Norway?',
+    answers: [
+      { text: /*[[${CurrentQuiz.questions.get(4).answers.get(0)}]]*/ 'Malmö',       correct: /*[[${CurrentQuiz.questions.get(4).correctAnswers.get(0)}]]*/ false },
+      { text: /*[[${CurrentQuiz.questions.get(4).answers.get(1)}]]*/ 'Reykjavík',   correct: /*[[${CurrentQuiz.questions.get(4).correctAnswers.get(1)}]]*/ false },
+      { text: /*[[${CurrentQuiz.questions.get(4).answers.get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.questions.get(4).correctAnswers.get(2)}]]*/ false},
+      { text: /*[[${CurrentQuiz.questions.get(4).answers.get(3)}]]*/ 'Oslo',        correct: /*[[${CurrentQuiz.questions.get(4).correctAnswers.get(3)}]]*/ true}
+    ]
+  }
+]
+</script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hot Topics Quiz</title>
+  <link th:href="@{/css/play.css}" rel="stylesheet">
+  <script defer th:src="@{/js/play.js}"></script>
+</head>
+<body>
+  <div class="container">
+    <div id="question-container" class="hide">
+      <div id="question">Question</div>
+      <div id="answer-buttons" class="btn-grid">
+        <button class="btn">Answer 1</button>
+        <button class="btn">Answer 2</button>
+        <button class="btn">Answer 3</button>
+        <button class="btn">Answer 4</button>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="start-btn" class="start-btn btn">Start</button>
+      <button id="next-btn" class="next-btn btn hide">Next</button>
+    </div>
+  </div>
+  <form id="form" method=POST class="hide">
+    <input type="text" name="an1">
+    <input type="text" name="an2">
+    <input type="text" name="an3">
+    <input type="text" name="an4">
+    <input type="text" name="an5">
+  </form>
+</body>
+</html>

@@ -22,7 +22,6 @@ public class CompletedQuiz {
 
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
   @JoinColumn(name = "user_id", nullable = false)
-  @OnDelete(action = OnDeleteAction.CASCADE)
   @JsonIgnore
   private User userParent;
 
@@ -35,6 +34,8 @@ public class CompletedQuiz {
 
   private boolean[] correctAnswers;
 
+  public CompletedQuiz() {}
+
   //the boolean array should be of size 5
   public CompletedQuiz(User userParent, Quiz quiz, int score, boolean[] cA) {
     this.userParent = userParent;
@@ -43,8 +44,20 @@ public class CompletedQuiz {
     this.correctAnswers = cA;
   }
 
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
   public User getUserParent() {
     return userParent;
+  }
+
+  public void setUserParent(User userParent) {
+    this.userParent = userParent;
   }
 
   public Quiz getQuiz() {
