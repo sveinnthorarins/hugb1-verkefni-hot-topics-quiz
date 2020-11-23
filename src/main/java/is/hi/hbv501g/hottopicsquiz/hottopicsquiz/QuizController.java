@@ -41,7 +41,7 @@ public class QuizController {
 
   @RequestMapping(value ="/play", method = RequestMethod.GET)
   public String playView(Model model) {
-    if (model.getAttribute("user") != null) return "redirect:/login";
+    if (model.getAttribute("user") == null) return "redirect:/login";
     return "play";
   }
 
