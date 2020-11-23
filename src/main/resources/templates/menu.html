@@ -16,22 +16,22 @@
         <p class="quizmenu_current_heading">This week's quiz</p>
         <p class="quizmenu_current_error" th:if="${CurrentQuiz == null}">Oh no, an error! Current quiz can't be found.</p>
         <div class="quizmenu_current_quiz" th:if="${CurrentQuiz != null}">
-          <p class="quizmenu_current_quiz_title" th:text="${CurrentQuiz.name}"></p>
+          <p class="quizmenu_current_quiz_title" th:text="${CurrentQuiz.getName()}"></p>
           <a class="quizmenu_current_quiz_playbutton" th:href="/play">Play</a>
         </div>
       </div>
       <div class="quizmenu_completed">
         <p class="quizmenu_completed_heading">Completed quizzes</p>
-        <div class="quizmenu_completed_error" th:if="${User.completed==null or User.completed.isEmpty()}">
+        <div class="quizmenu_completed_error" th:if="${User.getCompleted()==null or User.getCompleted().isEmpty()}">
           No completed quizzes were found.
         </div>
-        <div class="quizmenu_completed_quizlist" th:if="${User.completed!=null and !User.completed.isEmpty()}">
-          <div class="quizmenu_completed_quizlist_quiz" th:each="compquiz : ${User.completed}">
-            <p class="quizmenu_completed_quizlist_quiz_title" th:text="${compquiz.quiz.name}"></p>
+        <div class="quizmenu_completed_quizlist" th:if="${User.getCompleted()!=null and !User.getCompleted().isEmpty()}">
+          <div class="quizmenu_completed_quizlist_quiz" th:each="compquiz : ${User.getCompleted()}">
+            <p class="quizmenu_completed_quizlist_quiz_title" th:text="${compquiz.getQuiz().getName()}"></p>
             <div class="quizmenu_completed_quizlist_quiz_score">
-              <span>Score: </span><span th:text="${compquiz.score}"></span><span>/5</span>
+              <span>Score: </span><span th:text="${compquiz.getScore()}"></span><span>/5</span>
             </div>
-            <button class="quizmenu_completed_quizlist_quiz_view" th:action="@{/viewcompletedquiz(id=${compquiz.id})}"></button>
+            <a class="quizmenu_completed_quizlist_quiz_view" th:href="@{/results(cId=${compquiz.getId()})}">View</a>
           </div>
         </div>
       </div>

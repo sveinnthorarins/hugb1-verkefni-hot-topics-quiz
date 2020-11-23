@@ -13,21 +13,21 @@
     <section class="results">
       <p class="results_error" th:if="${completedquiz == null}">Oh no, an error! Quiz results can't be found.</p>
       <div class="results_quiz" th:if="${completedquiz != null}">
-        <p class="results_quiz_title" th:text="${completedquiz.quiz.name}">Quiz name</p>
+        <p class="results_quiz_title" th:text="${completedquiz.getQuiz().getName()}">Quiz name</p>
         <div class="results_quiz_score">
-          <span>Score: </span><span th:text="${completedquiz.score}">3</span><span>/5</span>
+          <span>Score: </span><span th:text="${completedquiz.getScore()}">3</span><span>/5</span>
         </div>
         <div class="results_quiz_questions">
-          <div class="results_quiz_questions_question" th:each="question,iterStat : ${completedquiz.quiz.questions}" th:classappend="${completedquiz.correctAnswers[iterStat.index]}? '--correct' : '--incorrect'" >
-            <p class="results_quiz_questions_question_title" th:text="${question.text}"></p>
+          <div class="results_quiz_questions_question" th:each="question,iterStat : ${completedquiz.getQuiz().getQuestions()}" th:classappend="${completedquiz.getCorrectAnswers()[iterStat.index]}? '--correct' : '--incorrect'" >
+            <p class="results_quiz_questions_question_title" th:text="${question.getText()}"></p>
             <p class="results_quiz_questions_question_answer">
               Correct answer:&nbsp;
-              <span th:if="${question.correctAnswers.get(0)}" th:text="${question.answers.get(0)}"></span>
-              <span th:if="${question.correctAnswers.get(1)}" th:text="${question.answers.get(0)}"></span>
-              <span th:if="${question.correctAnswers.get(2)}" th:text="${question.answers.get(0)}"></span>
-              <span th:if="${question.correctAnswers.get(3)}" th:text="${question.answers.get(0)}"></span>
+              <span th:if="${question.getCorrectAnswers().get(0)}" th:text="${question.getAnswers().get(0)}"></span>
+              <span th:if="${question.getCorrectAnswers().get(1)}" th:text="${question.getAnswers().get(0)}"></span>
+              <span th:if="${question.getCorrectAnswers().get(2)}" th:text="${question.getAnswers().get(0)}"></span>
+              <span th:if="${question.getCorrectAnswers().get(3)}" th:text="${question.getAnswers().get(0)}"></span>
             </p>
-            <a class="results_quiz_questions_question_infolink" th:href="${question.infoUrl}">See info about this topic</a>
+            <a class="results_quiz_questions_question_infolink" th:href="${question.getInfoUrl()}">See info about this topic</a>
           </div>
         </div>
       </div>

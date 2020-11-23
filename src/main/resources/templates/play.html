@@ -3,48 +3,48 @@
 <script th:inline="javascript">
   const questions = [
   {
-    question: /*[[${CurrentQuiz.questions.get(0).text}]]*/ 'What is the capital of Norway?',
+    question: /*[[${CurrentQuiz.getQuestions().get(0).getText()}]]*/ 'What is the capital of Norway?',
     answers: [
-      { text: /*[[${CurrentQuiz.questions.get(0).answers.get(0)}]]*/ 'Malmö', correct: /*[[${CurrentQuiz.questions.get(0).correctAnswers.get(0)}]]*/ false },
-      { text: /*[[${CurrentQuiz.questions.get(0).answers.get(1)}]]*/ 'Reykjavík', correct: /*[[${CurrentQuiz.questions.get(0).correctAnswers.get(1)}]]*/ false },
-      { text: /*[[${CurrentQuiz.questions.get(0).answers.get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.questions.get(0).correctAnswers.get(2)}]]*/ false},
-      { text: /*[[${CurrentQuiz.questions.get(0).answers.get(3)}]]*/ 'Oslo', correct: /*[[${CurrentQuiz.questions.get(0).correctAnswers.get(3)}]]*/ true}
+      { text: /*[[${CurrentQuiz.getQuestions().get(0).getAnswers().get(0)}]]*/ 'Malmö', correct: /*[[${CurrentQuiz.getQuestions().get(0).getCorrectAnswers().get(0)}]]*/ false },
+      { text: /*[[${CurrentQuiz.getQuestions().get(0).getAnswers().get(1)}]]*/ 'Reykjavík', correct: /*[[${CurrentQuiz.getQuestions().get(0).getCorrectAnswers().get(1)}]]*/ false },
+      { text: /*[[${CurrentQuiz.getQuestions().get(0).getAnswers().get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.getQuestions().get(0).getCorrectAnswers().get(2)}]]*/ false},
+      { text: /*[[${CurrentQuiz.getQuestions().get(0).getAnswers().get(3)}]]*/ 'Oslo', correct: /*[[${CurrentQuiz.getQuestions().get(0).getCorrectAnswers().get(3)}]]*/ true}
     ]
   },
   {
-    question: /*[[${CurrentQuiz.questions.get(1).text}]]*/ 'What is the capital of Norway?',
+    question: /*[[${CurrentQuiz.getQuestions().get(1).getText()}]]*/ 'What is the capital of Norway?',
     answers: [
-      { text: /*[[${CurrentQuiz.questions.get(1).answers.get(0)}]]*/ 'Malmö',       correct: /*[[${CurrentQuiz.questions.get(1).correctAnswers.get(0)}]]*/ false },
-      { text: /*[[${CurrentQuiz.questions.get(1).answers.get(1)}]]*/ 'Reykjavík',   correct: /*[[${CurrentQuiz.questions.get(1).correctAnswers.get(1)}]]*/ false },
-      { text: /*[[${CurrentQuiz.questions.get(1).answers.get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.questions.get(1).correctAnswers.get(2)}]]*/ false},
-      { text: /*[[${CurrentQuiz.questions.get(1).answers.get(3)}]]*/ 'Oslo',        correct: /*[[${CurrentQuiz.questions.get(1).correctAnswers.get(3)}]]*/ true}
+      { text: /*[[${CurrentQuiz.getQuestions().get(1).getAnswers().get(0)}]]*/ 'Malmö',       correct: /*[[${CurrentQuiz.getQuestions().get(1).getCorrectAnswers().get(0)}]]*/ false },
+      { text: /*[[${CurrentQuiz.getQuestions().get(1).getAnswers().get(1)}]]*/ 'Reykjavík',   correct: /*[[${CurrentQuiz.getQuestions().get(1).getCorrectAnswers().get(1)}]]*/ false },
+      { text: /*[[${CurrentQuiz.getQuestions().get(1).getAnswers().get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.getQuestions().get(1).getCorrectAnswers().get(2)}]]*/ false},
+      { text: /*[[${CurrentQuiz.getQuestions().get(1).getAnswers().get(3)}]]*/ 'Oslo',        correct: /*[[${CurrentQuiz.getQuestions().get(1).getCorrectAnswers().get(3)}]]*/ true}
     ]
   },
   {
-    question: /*[[${CurrentQuiz.questions.get(2).text}]]*/ 'What is the capital of Norway?',
+    question: /*[[${CurrentQuiz.getQuestions().get(2).getText()}]]*/ 'What is the capital of Norway?',
     answers: [
-      { text: /*[[${CurrentQuiz.questions.get(2).answers.get(0)}]]*/ 'Malmö',       correct: /*[[${CurrentQuiz.questions.get(2).correctAnswers.get(0)}]]*/ false },
-      { text: /*[[${CurrentQuiz.questions.get(2).answers.get(1)}]]*/ 'Reykjavík',   correct: /*[[${CurrentQuiz.questions.get(2).correctAnswers.get(1)}]]*/ false },
-      { text: /*[[${CurrentQuiz.questions.get(2).answers.get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.questions.get(2).correctAnswers.get(2)}]]*/ false},
-      { text: /*[[${CurrentQuiz.questions.get(2).answers.get(3)}]]*/ 'Oslo',        correct: /*[[${CurrentQuiz.questions.get(2).correctAnswers.get(3)}]]*/ true}
+      { text: /*[[${CurrentQuiz.getQuestions().get(2).getAnswers().get(0)}]]*/ 'Malmö',       correct: /*[[${CurrentQuiz.getQuestions().get(2).getCorrectAnswers().get(0)}]]*/ false },
+      { text: /*[[${CurrentQuiz.getQuestions().get(2).getAnswers().get(1)}]]*/ 'Reykjavík',   correct: /*[[${CurrentQuiz.getQuestions().get(2).getCorrectAnswers().get(1)}]]*/ false },
+      { text: /*[[${CurrentQuiz.getQuestions().get(2).getAnswers().get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.getQuestions().get(2).getCorrectAnswers().get(2)}]]*/ false},
+      { text: /*[[${CurrentQuiz.getQuestions().get(2).getAnswers().get(3)}]]*/ 'Oslo',        correct: /*[[${CurrentQuiz.getQuestions().get(2).getCorrectAnswers().get(3)}]]*/ true}
     ]
   },
   {
-    question: /*[[${CurrentQuiz.questions.get(3).text}]]*/ 'What is the capital of Norway?',
+    question: /*[[${CurrentQuiz.getQuestions().get(3).getText()}]]*/ 'What is the capital of Norway?',
     answers: [
-      { text: /*[[${CurrentQuiz.questions.get(3).answers.get(0)}]]*/ 'Malmö',       correct: /*[[${CurrentQuiz.questions.get(3).correctAnswers.get(0)}]]*/ false },
-      { text: /*[[${CurrentQuiz.questions.get(3).answers.get(1)}]]*/ 'Reykjavík',   correct: /*[[${CurrentQuiz.questions.get(3).correctAnswers.get(1)}]]*/ false },
-      { text: /*[[${CurrentQuiz.questions.get(3).answers.get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.questions.get(3).correctAnswers.get(2)}]]*/ false},
-      { text: /*[[${CurrentQuiz.questions.get(3).answers.get(3)}]]*/ 'Oslo',        correct: /*[[${CurrentQuiz.questions.get(3).correctAnswers.get(3)}]]*/ true}
+      { text: /*[[${CurrentQuiz.getQuestions().get(3).getAnswers().get(0)}]]*/ 'Malmö',       correct: /*[[${CurrentQuiz.getQuestions().get(3).getCorrectAnswers().get(0)}]]*/ false },
+      { text: /*[[${CurrentQuiz.getQuestions().get(3).getAnswers().get(1)}]]*/ 'Reykjavík',   correct: /*[[${CurrentQuiz.getQuestions().get(3).getCorrectAnswers().get(1)}]]*/ false },
+      { text: /*[[${CurrentQuiz.getQuestions().get(3).getAnswers().get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.getQuestions().get(3).getCorrectAnswers().get(2)}]]*/ false},
+      { text: /*[[${CurrentQuiz.getQuestions().get(3).getAnswers().get(3)}]]*/ 'Oslo',        correct: /*[[${CurrentQuiz.getQuestions().get(3).getCorrectAnswers().get(3)}]]*/ true}
     ]
   }, 
   {
-    question: /*[[${CurrentQuiz.questions.get(4).text}]]*/ 'What is the capital of Norway?',
+    question: /*[[${CurrentQuiz.getQuestions().get(4).getText()}]]*/ 'What is the capital of Norway?',
     answers: [
-      { text: /*[[${CurrentQuiz.questions.get(4).answers.get(0)}]]*/ 'Malmö',       correct: /*[[${CurrentQuiz.questions.get(4).correctAnswers.get(0)}]]*/ false },
-      { text: /*[[${CurrentQuiz.questions.get(4).answers.get(1)}]]*/ 'Reykjavík',   correct: /*[[${CurrentQuiz.questions.get(4).correctAnswers.get(1)}]]*/ false },
-      { text: /*[[${CurrentQuiz.questions.get(4).answers.get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.questions.get(4).correctAnswers.get(2)}]]*/ false},
-      { text: /*[[${CurrentQuiz.questions.get(4).answers.get(3)}]]*/ 'Oslo',        correct: /*[[${CurrentQuiz.questions.get(4).correctAnswers.get(3)}]]*/ true}
+      { text: /*[[${CurrentQuiz.getQuestions().get(4).getAnswers().get(0)}]]*/ 'Malmö',       correct: /*[[${CurrentQuiz.getQuestions().get(4).getCorrectAnswers().get(0)}]]*/ false },
+      { text: /*[[${CurrentQuiz.getQuestions().get(4).getAnswers().get(1)}]]*/ 'Reykjavík',   correct: /*[[${CurrentQuiz.getQuestions().get(4).getCorrectAnswers().get(1)}]]*/ false },
+      { text: /*[[${CurrentQuiz.getQuestions().get(4).getAnswers().get(2)}]]*/ 'Egilsstaðir', correct: /*[[${CurrentQuiz.getQuestions().get(4).getCorrectAnswers().get(2)}]]*/ false},
+      { text: /*[[${CurrentQuiz.getQuestions().get(4).getAnswers().get(3)}]]*/ 'Oslo',        correct: /*[[${CurrentQuiz.getQuestions().get(4).getCorrectAnswers().get(3)}]]*/ true}
     ]
   }
 ]

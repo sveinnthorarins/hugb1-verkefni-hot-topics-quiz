@@ -12,7 +12,15 @@
   </header>
   <main>
     <section class="adminpanel">
-      
+      <div class="adminpanel_createquiz">
+        <a class="adminpanel_createquiz_link" th:href="@{/createquiz}">Create new quiz</a>
+      </div>
+      <div class="adminpanel_allquizzes">
+        <div class="adminpanel_allquizzes_quiz" th:each="quiz : ${allquizzes}">
+          <p class="adminpanel_allquizzes_quiz_title" th:text="${quiz.getName()}"></p>
+          <a class="adminpanel_allquizzes_quiz_editlink" th:href="@{/editquiz(qId=${quiz.getId()})}">Edit</a>
+        </div>
+      </div>
     </section>
   </main>
   <footer></footer>
