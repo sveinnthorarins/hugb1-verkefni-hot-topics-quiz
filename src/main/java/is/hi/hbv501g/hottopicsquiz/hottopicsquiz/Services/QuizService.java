@@ -12,6 +12,8 @@ public interface QuizService {
 
   public List<Quiz> findByName(String name);
 
+  public Quiz findById(Long id);
+
   public Quiz saveQuiz(Quiz quiz);
 
   public void deleteQuiz(Quiz quiz);

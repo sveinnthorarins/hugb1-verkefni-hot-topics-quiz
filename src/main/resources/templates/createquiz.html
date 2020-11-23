@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hot Topics Quiz</title>
+  <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+  <header>
+    <h2>Hot Topics Quiz</h2>
+  </header>
+  <main>
+    <div>
+      <h4>Fill all the required information to create a new quiz.</h4>
+    </div>
+    <div style="color: red" th:text="${error} ?: '&nbsp;'"></div>
+    <form method="POST">
+      <input type="text" name="title" placeholder="Quiz title" required>
+      <div>
+        <span>Start date:&nbsp;</span>
+        <input style="display: inline-block;" type="date" name="startDate" required>
+      </div>
+      <div>
+        <span>End date:&nbsp;</span>
+        <input style="display: inline-block;" type="date" name="endDate" required>
+      </div>
+      <div th:each="i: ${#numbers.sequence(1, 5)}">
+        <p>Data for question 1:</p>
+        <input type="text" th:name="${'q' + i}" th:placeholder="${'Title of question ' + i}" required>
+        <input type="text" th:name="${'url' + i}" placeholder="URL for more info" required>
+        <div>
+          <input style="display: inline-block;" type="text" th:name="${'q' + i + 'an1'}" placeholder="Answer 1" required>
+          <input style="display: inline-block;" type="text" th:name="${'q' + i + 'an2'}" placeholder="Answer 2" required>
+          <input style="display: inline-block;" type="text" th:name="${'q' + i + 'an3'}" placeholder="Answer 3" required>
+          <input style="display: inline-block;" type="text" th:name="${'q' + i + 'an4'}" placeholder="Answer 4" required>
+          <div>
+            <span>Correct answer:&nbsp;</span>
+            <input style="display: inline-block;" type="number" max="4" min="1" th:name="${'ca' + i}" required>
+          </div>
+        </div>
+      </div>
+      <input type="submit" value="Create">
+    </form>
+    <br/>
+    <div>
+      <a href="../signup"><button>Sign up instead.</button></a>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+</html>

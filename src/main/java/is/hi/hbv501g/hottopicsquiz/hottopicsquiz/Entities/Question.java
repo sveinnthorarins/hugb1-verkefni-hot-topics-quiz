@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
 public class Question {
   
@@ -27,10 +30,12 @@ public class Question {
   
   private String text;
 
-  @ElementCollection(targetClass = String.class)
+  @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
+  @Fetch(FetchMode.SUBSELECT)
   private List<String> answers;
 
-  @ElementCollection(targetClass = Boolean.class)
+  @ElementCollection(targetClass = Boolean.class, fetch = FetchType.EAGER)
+  @Fetch(FetchMode.SUBSELECT)
   private List<Boolean> correctAnswers;
 
   private String infoUrl;

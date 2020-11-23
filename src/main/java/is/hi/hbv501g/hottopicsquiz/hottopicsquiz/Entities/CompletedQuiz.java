@@ -25,7 +25,7 @@ public class CompletedQuiz {
   @JsonIgnore
   private User userParent;
 
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @ManyToOne(fetch = FetchType.EAGER, optional = false)
   @JoinColumn(name = "quiz_id", nullable = false)
   @OnDelete(action = OnDeleteAction.CASCADE)
   private Quiz quiz;

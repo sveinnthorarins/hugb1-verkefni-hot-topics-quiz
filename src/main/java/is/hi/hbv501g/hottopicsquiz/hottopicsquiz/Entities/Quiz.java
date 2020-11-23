@@ -18,7 +18,7 @@ public class Quiz {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "quizParent", cascade = CascadeType.ALL)
+  @OneToMany(fetch = FetchType.EAGER, mappedBy = "quizParent", cascade = CascadeType.ALL)
   private List<Question> questions;
 
   private String name;

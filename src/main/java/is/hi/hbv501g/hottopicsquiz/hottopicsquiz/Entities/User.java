@@ -24,7 +24,7 @@ public class User {
   
   private String name;
 
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "userParent", cascade = CascadeType.ALL)
+  @OneToMany(fetch = FetchType.EAGER, mappedBy = "userParent", cascade = CascadeType.ALL)
   private List<CompletedQuiz> completed;
   
   private boolean admin;

@@ -12,7 +12,7 @@ import is.hi.hbv501g.hottopicsquiz.hottopicsquiz.Entities.User;
 import is.hi.hbv501g.hottopicsquiz.hottopicsquiz.Services.UserService;
 
 @Controller
-@SessionAttributes("User")
+@SessionAttributes("user")
 public class UserController {
 
   private UserService userService;
@@ -24,12 +24,13 @@ public class UserController {
 
   @RequestMapping("/")
   public String homeLoginCheck(Model model) {
-    if(model.getAttribute("User") != null) return "redirect:/menu";
+    if(model.getAttribute("user") != null) return "redirect:/menu";
     return "redirect:/login";
   }
 
   @RequestMapping(value = "/login", method = RequestMethod.GET)
-  public String userLoginPage() {
+  public String userLoginPage(Model model) {
+    if(model.getAttribute("user") != null) return "redirect:/menu";
     return "login";
   }
   
@@ -40,12 +41,13 @@ public class UserController {
       model.addAttribute("error", "Incorrect username or password.");
       return "login";
     }
-    model.addAttribute("User", user);
+    model.addAttribute("user", user);
     return "redirect:/menu";
   }
 
   @RequestMapping(value = "/signup", method = RequestMethod.GET)
-  public String userSignupPage() {
+  public String userSignupPage(Model model) {
+    if(model.getAttribute("user") != null) return "redirect:/menu";
     return "signup";
   }
 
@@ -59,7 +61,7 @@ public class UserController {
       model.addAttribute("error", "Username already taken.");
       return "signup";
     }
-    model.addAttribute("User", user);
+    model.addAttribute("user", user);
     return "redirect:/menu";
   }
 

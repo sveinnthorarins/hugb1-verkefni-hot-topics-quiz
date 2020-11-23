@@ -42,6 +42,14 @@ public class QuizServiceImp implements QuizService {
   }
 
   @Override
+  public Quiz findById(Long id) {
+    Quiz quiz = repository.findById(id).orElseThrow(
+      () -> new Error("Quiz id not found in database.")
+    );
+    return quiz;
+  }
+
+  @Override
   public Quiz saveQuiz(Quiz quiz) {
     return repository.save(quiz);
   }
