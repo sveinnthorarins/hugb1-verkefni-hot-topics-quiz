@@ -53,8 +53,8 @@ public class UserServiceImp implements UserService {
    * Saves the User entity to database.
    */
   @Override
-  public void saveUser(User user) {
-    repository.save(user);
+  public User saveUser(User user) {
+    return repository.save(user);
   }
 
   /**

@@ -19,16 +19,19 @@ import is.hi.hbv501g.hottopicsquiz.hottopicsquiz.Entities.Question;
 import is.hi.hbv501g.hottopicsquiz.hottopicsquiz.Entities.Quiz;
 import is.hi.hbv501g.hottopicsquiz.hottopicsquiz.Entities.User;
 import is.hi.hbv501g.hottopicsquiz.hottopicsquiz.Services.QuizService;
+import is.hi.hbv501g.hottopicsquiz.hottopicsquiz.Services.UserService;
 
 @Controller
 @SessionAttributes({"user", "currentquiz"})
 public class QuizController {
   
   private QuizService quizService;
+  private UserService userService;
 
   @Autowired
-  public QuizController(QuizService quizServ) {
+  public QuizController(QuizService quizServ, UserService userServ) {
     this.quizService = quizServ;
+    this.userService = userServ;
   }
 
   @RequestMapping(value = "/menu", method = RequestMethod.GET)
@@ -62,6 +65,8 @@ public class QuizController {
 
     CompletedQuiz quiz = new CompletedQuiz(user, currentquiz, score, correctAnswers);
     user.addCompletedQuiz(quiz);
+    user = userService.saveUser(user);
+    model.addAttribute("user", user);
     return "redirect:/results?cId=" + user.getCompleted().get(user.getCompleted().size()-1).getId().toString();
   }
 
