@@ -1,0 +1,12 @@
+/*applying font on document and aligning center*/
+html *
+{
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  color: #000;
+  font-family: Arial;
+  text-align: center;
+  border-style: solid;
+  border-width: thick;
+}
