@@ -7,3 +7,19 @@ html *
   font-family: Arial;
   text-align: center;
 }
+.adminpanel_createquiz_link {
+  background-color: #c73510;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.adminpanel_allquizzes_quiz_editlink{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}

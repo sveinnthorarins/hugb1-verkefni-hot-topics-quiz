@@ -7,3 +7,25 @@ html *
   font-family: Arial;
   text-align: center;
 }
+/*inputs */
+input[type=text], input[type=password] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: flex;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 100%;
+  background: #f1f1f1;
+}
+
+/*submit button*/
+input[type=submit]{
+  background-color: #c73510;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
