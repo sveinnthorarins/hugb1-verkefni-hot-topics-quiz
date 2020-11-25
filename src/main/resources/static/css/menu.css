@@ -9,29 +9,24 @@ html *
   text-align: center;
   border-style: solid;
   border-width: thick;
+  width: 30%;
 }
 /* Set a style for all buttons */
 .quizmenu_current_quiz_playbutton {
-  font: bold 11px Arial;
-  text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+  background-color: #c73510;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  cursor: pointer;
 }
 .quizmenu_completed_quizlist_quiz_view{
-  font: bold 11px Arial;
-  text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  cursor: pointer;
 }
 /* Add a hover effect for buttons */
 
