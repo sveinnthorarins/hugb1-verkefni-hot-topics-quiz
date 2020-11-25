@@ -9,6 +9,10 @@ html *
   text-align: center;
   width: 100%;
 }
+p{
+  padding: 15px;
+
+}
 /* Set a style for all buttons */
 .quizmenu_current_quiz_playbutton {
   background-color: #c73510;

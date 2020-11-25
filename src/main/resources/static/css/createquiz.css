@@ -15,7 +15,6 @@ input[type=text], input[type=password] {
   display: flex;
   border: 1px solid #ccc;
   box-sizing: border-box;
-  width: 100%;
   background: #f1f1f1;
 }
 
@@ -27,5 +26,14 @@ input[type=submit]{
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 30%;
+}
+button{
+   background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
 }
